@@ -1,0 +1,3 @@
+# Test dependency for the defensive automation introduced in Phase 6.
+# Keep the runtime tooling standard-library-first unless a dependency is justified.
+pytest>=8.0,<9.0
