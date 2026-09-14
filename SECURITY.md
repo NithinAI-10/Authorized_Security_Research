@@ -2,48 +2,48 @@
 
 ## Repository Intent
 
-This repository documents defensive practices for **authorized security research**. Its contents are intended to demonstrate professional research methodology, responsible evidence handling, impact analysis, remediation thinking, and safe reporting practices.
+This repository documents defensive practices for authorized security research. The material focuses on research methods, evidence handling, impact analysis, remediation, and safe reporting.
 
 ## Authorization Requirement
 
-Only test systems, applications, accounts, or environments when you have explicit permission to do so. Applicable bug-bounty rules, coordinated disclosure policies, contracts, laws, and platform terms must always be respected.
+Test systems, applications, accounts, or environments only with explicit permission. Follow applicable bug bounty rules, coordinated disclosure policies, contracts, laws, and platform terms.
 
-Nothing in this repository should be interpreted as permission to test a third-party system.
+This repository does not grant permission to test any third party system.
 
 ## Sensitive Information Policy
 
 Do not commit or publish:
 
-- company or program names tied to non-public findings;
-- bug-bounty report identifiers;
-- live endpoints, internal hostnames, or target-specific request paths;
-- credentials, session tokens, API keys, private keys, or secrets;
-- customer, employee, or other personal data;
-- private program communications or disclosure correspondence;
-- raw evidence that could identify a vulnerable production target;
-- proof-of-concept details that unnecessarily increase exploitation risk.
+- Company or program names linked to nonpublic findings.
+- Bug bounty report identifiers.
+- Live endpoints, internal hostnames, or target specific request paths.
+- Credentials, session tokens, API keys, private keys, or secrets.
+- Customer, employee, or other personal data.
+- Private program communications or disclosure correspondence.
+- Raw evidence that identifies a vulnerable production target.
+- Proof of concept details that increase exploitation risk without a defensive need.
 
-Use neutral placeholders such as `example.invalid`, `[REDACTED]`, `USER_A`, and `RESOURCE_1` when illustrating a workflow.
+Use neutral placeholders such as `example.invalid`, `[REDACTED]`, `USER_A`, and `RESOURCE_1` in public examples.
 
 ## Evidence Handling
 
-Before material is added to this repository:
+Before adding material to this repository:
 
-1. confirm that publication is permitted;
-2. retain only the minimum evidence needed for the educational point;
-3. remove target-identifying and user-identifying data;
-4. remove secrets and authentication artifacts;
-5. review screenshots and metadata for accidental disclosure;
-6. describe impact and remediation without exposing reusable attack material against a live system.
+1. Confirm publication permission.
+2. Retain only the evidence required for the educational point.
+3. Remove target identifying and user identifying data.
+4. Remove secrets and authentication artifacts.
+5. Review screenshots and metadata for accidental disclosure.
+6. Describe impact and remediation without exposing reusable attack material against a live system.
 
-A dedicated evidence-handling standard will be maintained in `docs/evidence-handling.md` during the methodology phase.
+Phase 2 adds the detailed evidence handling standard in `docs/evidence-handling.md`.
 
-## Reporting a Security Issue in This Repository
+## Reporting a Repository Security Issue
 
-If you discover a security problem in code or automation contained in this repository, avoid placing exploit details or sensitive data in a public issue. Contact the repository owner through an appropriate private channel available on the associated GitHub profile.
+Do not place exploit details or sensitive data in a public issue. Contact the repository owner through an appropriate private channel listed on the associated GitHub profile.
 
-Include only the information needed to reproduce and remediate the repository-level issue safely.
+Provide only the information required to reproduce and remediate the repository issue safely.
 
 ## Defensive Use
 
-Examples and future case studies are intentionally sanitized and generalized. They should be used to improve access control, validation, monitoring, secure configuration, incident response, and remediation practices—not to target systems without authorization.
+Examples and case studies use sanitized, generalized data. Use the material to improve access control, validation, monitoring, secure configuration, incident response, and remediation. Do not use it to target systems without authorization.
