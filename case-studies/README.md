@@ -22,8 +22,8 @@ Each study records:
 | --- | --- | --- |
 | [Case 01](case-01-access-control.md) | Access control weakness | Authorization |
 | [Case 02](case-02-cors-misconfiguration.md) | CORS misconfiguration | Browser and API security |
-
-Additional sanitized cases will be added as the project progresses.
+| [Case 03](case-03-sensitive-key-exposure.md) | Sensitive key exposure | Secret and key management |
+| [Case 04](case-04-otp-enumeration.md) | OTP enumeration and resend controls | Authentication and abuse prevention |
 
 ## Publication Rules
 
