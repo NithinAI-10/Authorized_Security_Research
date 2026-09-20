@@ -1,35 +1,93 @@
 # Authorized Security Research
 
-This repository documents authorized security research for defensive learning and portfolio review. It focuses on repeatable research methods, evidence handling, impact assessment, remediation, and responsible disclosure.
+A portfolio project for authorized vulnerability research, defensive analysis, evidence handling, remediation, and security automation.
 
-## Purpose
+The repository shows how I move from a scoped research question to a documented security finding while protecting target information. Public material uses sanitized examples and removes sensitive details.
 
-The project shows a structured process for researching, documenting, sanitizing, and communicating security findings. Published material removes sensitive target details and keeps the focus on defensive lessons.
+## What This Project Demonstrates
 
-## Research Principles
+- authorization and scope review before testing
+- controlled validation with clear baselines
+- evidence collection and publication sanitization
+- observed versus potential impact analysis
+- remediation and retest planning
+- defensive Python automation
+- unit testing and continuous integration
+- responsible public documentation
 
-- Authorization first. Test only systems and programs with explicit permission.
-- Minimize collection. Gather only the evidence required to validate a finding.
-- Sanitize before publication. Remove organization names, report identifiers, live endpoints, secrets, customer data, and private communications.
-- Reproduce safely. Record enough detail for technical review without exposing sensitive target information.
-- Prioritize remediation. Connect each finding to impact, risk reduction, and practical fixes.
-- Disclose responsibly. Follow program rules and coordinated disclosure requirements.
+## Research Workflow
 
-## Planned Repository Areas
+1. Confirm authorization and scope.
+2. Define the security question and expected secure behavior.
+3. Record a baseline.
+4. Change one relevant condition and compare the result.
+5. Collect the minimum evidence needed for review.
+6. Separate observed behavior from potential impact.
+7. Propose remediation and a retest plan.
+8. Sanitize all material before public use.
 
-- `docs/` contains research methodology, evidence handling, impact assessment, reporting workflow, and lessons learned.
-- `templates/` contains reusable vulnerability, case study, and remediation templates.
-- `case-studies/` contains sanitized defensive case studies based on authorized research patterns.
-- `scripts/` contains defensive automation for sanitization, indexing, and repository validation.
-- `tests/` contains automated tests for project tooling.
-- `screenshots/` contains only user provided, fully sanitized portfolio evidence when appropriate.
+See `docs/methodology.md`, `docs/evidence-handling.md`, `docs/impact-assessment.md`, and `docs/reporting-workflow.md` for the full process.
+
+## Sanitized Case Studies
+
+The `case-studies/` directory contains four defensive studies:
+
+- Access control: server-side authorization and object access boundaries.
+- CORS configuration: origin trust, credential handling, and browser access policy.
+- Sensitive key exposure: secret boundaries, rotation, storage, and validation.
+- OTP enumeration: response consistency, resend controls, rate limits, and abuse detection.
+
+Each study removes target identity, live endpoints, private communications, customer data, secrets, and sensitive proof of concept details.
+
+## Defensive Automation
+
+`scripts/sanitize_evidence.py` redacts common sensitive patterns from text before review.
+
+`scripts/generate_case_index.py` builds a deterministic index from sanitized case-study files.
+
+`scripts/validate_markdown.py` checks public Markdown for basic structure and selected sensitive-data patterns.
+
+These tools support review. They do not replace manual inspection before publication.
+
+## Tests and CI
+
+The test suite covers evidence sanitization and deterministic case index generation. GitHub Actions runs the unit tests and Markdown validation on repository changes.
+
+Run the checks locally:
+
+```bash
+python -m pip install -r requirements.txt
+python -m pytest -q
+python scripts/validate_markdown.py .
+```
+
+## Repository Structure
+
+```text
+.github/workflows/   Continuous integration
+docs/                Research and reporting methodology
+templates/           Reusable reporting templates
+case-studies/        Sanitized defensive case studies
+scripts/             Defensive research automation
+tests/               Unit tests
+screenshots/         Guidance and future sanitized visual evidence
+```
 
 ## Safety Boundary
 
-This repository does not publish company names, bug bounty report IDs, live targets, credentials, tokens, private keys, customer information, private program communications, or sensitive proof of concept details.
+This repository does not publish company names tied to private findings, bug bounty report IDs, live targets, credentials, tokens, private keys, customer information, private program communications, or sensitive proof of concept details.
+
+Research belongs here only when the underlying work was authorized. Public examples stay focused on security reasoning, defensive lessons, remediation, and verification.
+
+## Project Documentation
+
+- `SECURITY.md` defines authorization and disclosure rules.
+- `CONTRIBUTING.md` defines safe contribution checks.
+- `docs/lessons-learned.md` records practical research lessons.
+- `screenshots/README.md` defines the screenshot publication gate.
+- `ROADMAP.md` tracks useful future work.
+- `CHANGELOG.md` records project milestones.
 
 ## Status
 
-Phase 1, repository foundation, is complete.
-
-Later phases add methodology, reporting templates, sanitized case studies, defensive automation, tests, continuous integration, and final portfolio documentation.
+Phases 1 through 7 are complete. Screenshot evidence remains pending until safe source images are available and pass the publication review process.
